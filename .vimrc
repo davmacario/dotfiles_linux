@@ -11,7 +11,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'morhetz/gruvbox'
 Plugin 'dense-analysis/ale'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'psf/black'
@@ -72,15 +71,7 @@ let g:black_virtualenv='~/.vim/black'
 " Format with black when saving
 autocmd BufWritePre *.py execute ':Black'
 
-" Lightline colorscheme:
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ }
 set laststatus=2
-
-" Color scheme
-colorscheme gruvbox
-set background=dark     " dark background
 
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
