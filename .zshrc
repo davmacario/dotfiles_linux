@@ -1,4 +1,4 @@
-# Command(s) ran at the beginning
+# Commands to run at startup
 neofetch
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -27,7 +27,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
+# CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -83,8 +83,8 @@ CASE_SENSITIVE="true"
 plugins=(
     git
     npm
-    zsh-autosuggestions
     zsh-syntax-highlighting
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -129,6 +129,3 @@ alias cowsaysomething="fortune | cowsay"
 alias tetris=/snap/bin/tetris-thefenriswolf.tetris
 alias matlab="~/MATLAB/R2022a/bin/matlab"
 
-export GUROBI_HOME="/home/dmacario/gurobi1001/linux64"
-export PATH="${PATH}:${GUROBI_HOME}/bin"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
