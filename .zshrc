@@ -82,6 +82,7 @@ CASE_SENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    npm
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
@@ -125,9 +126,8 @@ alias python=/usr/bin/python3
 
 alias jlab="jupyter lab --port=8899"
 alias cowsaysomething="fortune | cowsay"
-
-# Set bat theme
-export BAT_THEME="gruvbox-dark"
+alias tetris=/snap/bin/tetris-thefenriswolf.tetris
+alias matlab="~/MATLAB/R2022a/bin/matlab"
 
 export GUROBI_HOME="/home/dmacario/gurobi1001/linux64"
 export PATH="${PATH}:${GUROBI_HOME}/bin"
