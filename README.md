@@ -10,8 +10,8 @@ Contents:
 
 ## Requirements - ZSH
 
-* [Oh My Zsh]{https://ohmyz.sh/}
-* [Powerlevel10k]{https://github.com/romkatv/powerlevel10k}
+* [Oh My Zsh](https://ohmyz.sh/)
+* [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 * Neofetch
 
 ## Requirements - bash
