@@ -1,6 +1,7 @@
-# Dotfiles - MacOS
+# Dotfiles - Linux
 
-Dotfiles I use on my Mac.
+Dotfiles I use on my Linux machines (Ubuntu).
+The different branches refer to different setups.
 
 Contents:
 
