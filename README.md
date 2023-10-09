@@ -21,7 +21,7 @@ Contents:
 
 ## Requirements - vim
 
-* Vim (needs to be installed via Homebrew, as default MacOS installation does not support Python)
+* Vim (ensure your installation supports Python3 - run `vim --version` and look for `+python3` in the output)
 * [Vundle](https://github.com/VundleVim/Vundle.vim)
 * Black (Python formatter) - create venv in `~/.vim/black/` and follow [this](https://black.readthedocs.io/en/stable/integrations/editors.html#vundle) guide
   * There are some issues with the git repository located at `~/.vim/bundle/black` after installation with Vundle - delete it and clone the [original one](https://github.com/psf/black)
