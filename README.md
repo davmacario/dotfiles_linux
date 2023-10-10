@@ -12,6 +12,8 @@ Contents:
 ## Requirements - ZSH
 
 * [Oh My Zsh](https://ohmyz.sh/)
+  * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+  * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#in-your-zshrc)
 * [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 * Neofetch
 
