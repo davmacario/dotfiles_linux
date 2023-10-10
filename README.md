@@ -1,6 +1,7 @@
-# Dotfiles - MacOS
+# Dotfiles - Linux
 
-Dotfiles I use on my Mac.
+Dotfiles I use on my Linux machines (Ubuntu).
+The different branches refer to different setups.
 
 Contents:
 
@@ -10,8 +11,10 @@ Contents:
 
 ## Requirements - ZSH
 
-* [Oh My Zsh]{https://ohmyz.sh/}
-* [Powerlevel10k]{https://github.com/romkatv/powerlevel10k}
+* [Oh My Zsh](https://ohmyz.sh/)
+  * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+  * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#in-your-zshrc)
+* [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 * Neofetch
 
 ## Requirements - bash
@@ -20,7 +23,7 @@ Contents:
 
 ## Requirements - vim
 
-* Vim (needs to be installed via Homebrew, as default MacOS installation does not support Python)
+* Vim (ensure your installation supports Python3 - run `vim --version` and look for `+python3` in the output)
 * [Vundle](https://github.com/VundleVim/Vundle.vim)
 * Black (Python formatter) - create venv in `~/.vim/black/` and follow [this](https://black.readthedocs.io/en/stable/integrations/editors.html#vundle) guide
   * There are some issues with the git repository located at `~/.vim/bundle/black` after installation with Vundle - delete it and clone the [original one](https://github.com/psf/black)
