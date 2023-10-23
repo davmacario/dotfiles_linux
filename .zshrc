@@ -128,4 +128,5 @@ alias jlab="jupyter lab --port=8899"
 alias cowsaysomething="fortune | cowsay"
 alias tetris=/snap/bin/tetris-thefenriswolf.tetris
 alias matlab="~/MATLAB/R2022a/bin/matlab"
+alias bat='batcat'
 
