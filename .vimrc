@@ -50,6 +50,9 @@ set backspace=indent,eol,start
 " Share clipboard
 set clipboard=unnamed
 
+" Change leader key
+let mapleader = ","
+
 " Python file settings (some are redundant, but global changes will not affect
 " them
 au BufNewFile, BufRead *.py
