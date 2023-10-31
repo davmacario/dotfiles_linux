@@ -20,6 +20,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'preservim/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'Yggdroot/indentline'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
@@ -34,6 +35,7 @@ syntax enable
 set tabstop=4
 set shiftwidth=4
 set expandtab
+" Hybrid line numbers
 set number relativenumber
 filetype indent on
 set autoindent
@@ -49,6 +51,7 @@ set updatetime=100
 set backspace=indent,eol,start
 " Share clipboard
 set clipboard=unnamed
+set path+=**
 
 " Change leader key
 let mapleader = ","
@@ -64,10 +67,28 @@ au BufNewFile, BufRead *.py
     \ set autoindent
     \ set fileformat=unix
 
-let g:ale_linters = {'python': ['Black']}
+" Markdown file settings
+let g:markdown_recommended_style=0
+autocmd BufNewFile, BufRead *.md
+    \ setlocal tabstop=2
+    \ setlocal softtabstop=2
+    \ setlocal shiftwidth=2
+    \ setlocal expandtab
+    \ setlocal autoindent
+    \ setlocal fileformat=unix
+    \ setlocal spell
+    \ setlocal textwidth=80
+
+let g:ale_linters = {
+    \'python': ['Black'],
+    \'markdown': ['writegood'],
+    \}
 
 " Autocomplete settings (YouCompleteMe)
 let g:ycm_autoclose_preview_window_after_completion=1
+
+" Tab plugin settings
+let g:indentLine_color_term = 238
 
 " Black Python formatter settings
 let g:black_virtualenv='~/.vim/black'
