@@ -16,7 +16,8 @@ Plugin 'dense-analysis/ale'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'psf/black'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'itchyny/lightline.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'preservim/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
@@ -80,9 +81,11 @@ autocmd BufNewFile, BufRead *.md
     \ setlocal textwidth=80
 
 let g:ale_linters = {
-    \'python': ['Black'],
+    \'python': ['Black', 'flake8'],
     \'markdown': ['writegood'],
     \}
+
+let g:ale_fixers = {'*': [], 'python': ['black', 'isort']}
 
 " Autocomplete settings (YouCompleteMe)
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -97,9 +100,7 @@ let g:black_virtualenv='~/.vim/black'
 autocmd BufWritePre *.py execute ':Black'
 
 " Lightline colorscheme:
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ }
+let g:airline_theme='gruvbox'
 set laststatus=2
 
 " Color scheme
