@@ -16,10 +16,12 @@ Plugin 'dense-analysis/ale'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'psf/black'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'itchyny/lightline.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'preservim/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'Yggdroot/indentline'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
@@ -31,9 +33,11 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 syntax enable
+set mouse=a
 set tabstop=4
 set shiftwidth=4
 set expandtab
+" Hybrid line numbers
 set number relativenumber
 filetype indent on
 set autoindent
@@ -49,6 +53,19 @@ set updatetime=100
 set backspace=indent,eol,start
 " Share clipboard
 set clipboard=unnamed
+set path+=**
+set hlsearch
+set ignorecase
+set smartcase
+
+" Leader key: Space
+let mapleader = ","
+
+" Remap keys for split-view
+nnoremap <leader>h <c-w>h
+nnoremap <leader>l <c-w>l
+nnoremap <leader>v :vsplit<CR>
+nnoremap <leader>s :split<CR>
 
 " Python file settings (some are redundant, but global changes will not affect
 " them
@@ -61,10 +78,26 @@ au BufNewFile, BufRead *.py
     \ set autoindent
     \ set fileformat=unix
 
-let g:ale_linters = {'python': ['Black']}
+let g:ale_linters = {
+    \'python': ['Black', 'flake8'],
+    \'markdown': ['writegood'],
+    \}
+
+let g:ale_fixers = {'*': [], 'python': ['black', 'isort']}
+
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_linters_explicit = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
 
 " Autocomplete settings (YouCompleteMe)
 let g:ycm_autoclose_preview_window_after_completion=1
+
+" Tab plugin settings
+let g:indentLine_color_term = 238
 
 " Black Python formatter settings
 let g:black_virtualenv='~/.vim/black'
@@ -72,6 +105,8 @@ let g:black_virtualenv='~/.vim/black'
 " Format with black when saving
 autocmd BufWritePre *.py execute ':Black'
 
+" Lightline colorscheme:
+let g:airline_theme='base16_nord'
 set laststatus=2
 
 " Color scheme
