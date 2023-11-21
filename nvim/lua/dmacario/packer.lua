@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    use({ 
+    use({
         "ellisonleao/gruvbox.nvim",
         as = 'gruvbox',
         config = function()
@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
     })
 
     use( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    -- use( 'p00f/nvim-ts-rainbow' )
     use( 'nvim-treesitter/playground' )
     use( 'theprimeagen/harpoon' )
     use( 'mbbill/undotree' )
@@ -37,30 +38,12 @@ return require('packer').startup(function(use)
     use( 'romgrk/barbar.nvim' )
     use( 'nvim-lua/plenary.nvim' )
     use( 'dense-analysis/ale' )
-    use( 'vim-syntastic/syntastic' )
     use( 'stevearc/dressing.nvim' )
     use( 'airblade/vim-gitgutter' )
     use( 'lervag/vimtex' )
-    use( 'SirVer/ultisnips' )
-    use( 'honza/vim-snippets' )
-    use {
-        "folke/trouble.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-            signs = {
-                -- icons / text used for a diagnostic
-                error = "",
-                warning = "",
-                hint = "",
-                information = "",
-                other = "",
-            },
-        },
-    }
-    use {
+    -- use( 'folke/lsp-colors.nvim' )
+    use( 'folke/trouble.nvim' )
+    use({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
         requires = {
@@ -75,15 +58,15 @@ return require('packer').startup(function(use)
             {'hrsh7th/cmp-nvim-lsp'},
             {'L3MON4D3/LuaSnip'},
         }
-    }
-
-    -- install without yarn or npm
+    })
     use({
         "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
+        run = "cd app && npm install",
+        setup = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" },
     })
-
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
 end)
 

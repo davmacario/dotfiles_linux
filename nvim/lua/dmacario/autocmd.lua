@@ -5,6 +5,6 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"},
 
 vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"},
     { pattern = { '*.md' },
-    command = "set tabstop=2  set softtabstop=2 set shiftwidth=2 set expandtab set autoindent set fileformat=unix set spell",
+    command = "set tabstop=2  set softtabstop=2 set shiftwidth=2 set expandtab set autoindent set fileformat=unix set spell set colorcolumn=100",
 })
 
