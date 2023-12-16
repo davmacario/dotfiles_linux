@@ -129,6 +129,7 @@ alias cowsaysomething="fortune | cowsay"
 alias tetris=/snap/bin/tetris-thefenriswolf.tetris
 alias matlab="~/MATLAB/R2022a/bin/matlab"
 alias vim="nvim"
+alias bat="batcat"
 
 export GUROBI_HOME="/home/dmacario/gurobi1001/linux64"
 export PATH="${PATH}:${GUROBI_HOME}/bin"
