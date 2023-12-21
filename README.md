@@ -71,7 +71,7 @@ For a complete list of plugins, refer to the [Packer config](./nvim/lua/dmacario
 - Fugitive (git utility):
   - `<leader>gst`: show git status (exit with :q)
 - Nerdtree (show file tree):
-  - `Ctrl e`: toggle (on/off) tree
+  - `<leader>o`: toggle (on/off) tree
 - Telescope (fuzzy finder):
   - `<leader>ff` for find files
   - `<leader>fg` for find git files
