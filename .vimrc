@@ -123,7 +123,7 @@ autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 let NERDTreeShowHidden=1
 
 " Shortcuts
-map <C-o> :NERDTreeToggle<CR>
+map <leader>o :NERDTreeToggle<CR>
 
 " VIMSCRIPT -------------------------------------------------------------- {{{
 
