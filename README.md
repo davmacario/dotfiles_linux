@@ -29,8 +29,14 @@ Extras:
   - Since I switched from Vim to Neovim, I followed [this guide](https://neovim.io/doc/user/nvim.html#nvim-from-vim)
 - Package manager: [Packer](https://github.com/wbthomason/packer.nvim)
 - Fuzzy finder: [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-  - It requires `fd` (install it with `sudo apt install fd-find` on Ubuntu)
+  - It requires `fd` (install it with `sudo apt install fd-find` on Ubuntu/Debian)
 - Parser: [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- Ensure the Python virtual environment package is installed (example for Ubuntu/Debian and python 3.10):
+
+```bash
+sudo apt install python3.10-venv
+```
+
 - Debugger: [nvim-dap](https://github.com/mfussenegger/nvim-dap)
   - It requires to create a virtual environment where to place the [debugging engine](https://github.com/microsoft/debugpy):
 
