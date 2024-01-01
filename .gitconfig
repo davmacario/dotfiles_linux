@@ -1,0 +1,8 @@
+[user]
+	name = Davide Macario
+	email = dav.macario@gmail.com
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[core]
+	editor = nvim
