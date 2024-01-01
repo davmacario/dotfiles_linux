@@ -47,6 +47,8 @@ python -m venv debugpy
 debugpy/bin/python -m pip install debugpy
 ```
 
+- `wl-clipboard`, install via package manager (`sudo apt install wl-clipboard`), needed by the clipboard-image plugin (paste images in markdown)
+
 For a complete list of plugins, refer to the [Packer config](./nvim/lua/dmacario/packer.lua).
 
 ### Key bindings
