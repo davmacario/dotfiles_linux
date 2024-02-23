@@ -36,3 +36,14 @@ vim.opt.scrolloff = 8
 
 -- Add column at 80 chars
 vim.opt.colorcolumn = "80"
+
+-- Settings for lualine
+vim.opt.showtabline = 2
+vim.opt.showmode = false
+
+-- Line wrap
+vim.opt.wrap = true
+
+-- Do not load netrw (allows to use file tree plugin)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

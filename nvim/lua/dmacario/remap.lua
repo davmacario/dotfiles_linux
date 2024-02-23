@@ -2,7 +2,7 @@ vim.g.mapleader = ' '
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
--- Code folding with space
+-- Code folding with comma
 vim.keymap.set("n", ",", "za")
 
 -- Navigating split view
@@ -33,3 +33,5 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Paste with <leader>p to overwrite without losing yanked text
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
+-- Replace word under cursor
+vim.keymap.set("n", "<leader>R", ":%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i")

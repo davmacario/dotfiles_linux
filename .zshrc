@@ -86,6 +86,7 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
+bindkey '^ ' autosuggest-accept  # Use ctrl+space to accept autosuggestion
 
 source $ZSH/oh-my-zsh.sh
 
@@ -139,4 +140,21 @@ export PATH="$HOME/.local/bin:$PATH"
 export BAT_THEME="gruvbox-dark"
 export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+export LC_ALL=C
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+export GITUSER="davmacario"
+export GHREPOS="$HOME/github/$GITUSER"
+export DOTFILES="$GHREPOS/dotfiles_mac"
+
+# Add local bin to path
+export PATH="$PATH:$HOME/.local/bin"
+
+# Go executables
+export PATH="$PATH:$HOME/go/bin"
+
+# Configuration
+export XDG_CONFIG_HOME="$HOME/.config"
 
