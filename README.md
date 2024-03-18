@@ -1,20 +1,38 @@
-# Dotfiles - MacOS
+# Dotfiles - Linux
 
-Dotfiles I use on my Linux (Ubuntu) computers.
+Welcome to my dotfiles!
+
+I am always trying new stuff, so not everything in this readme may be up-to-date.
+
+> New terminal session
+> ![new session](images/new_term.png)
+
+> Neovim - Startup
+> ![nvim](images/nvim_open.png)
+
+> Neovim - Editing a file
+> ![nvim](images/nvim.png)
+
+---
 
 Contents:
 
 - [.zshrc](./.zshrc): ZSH configuration file (using Oh My Zsh)
-- [.vimrc](./.vimrc): VIM configuration file (requires Vundle) [_OBSOLETE_]
-- [.p10k.zsh](./.p10k.zsh): Powerlevel10k settings file
-- [nvim folder](./nvim): Neovim configuration files (Lua)
+- [.vimrc](./.vimrc): VIM configuration file (requires Vundle)
+- [.p10k.zsh](./.p10k.zsh): Powerlevel10k (ZSH theme) settings file
+- [nvim folder](./nvim): Neovim configuration files (using Lua)
 
-## Requirements - ZSH
+## Requirements
 
+- C compiler (gcc)
 - [Oh My Zsh](https://ohmyz.sh/)
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
-- [Neovim](https://neovim.io/)
-  - [Packer](https://github.com/wbthomason/packer.nvim)
+- Neofetch
+- Neovim (>=0.9.0)
+  - Suggested: install from source or PPA - **the APT version is too old**!
+- `fd` (installed via apt: `sudo apt install fd-find`
+- [pngpaste](https://github.com/jcsalterego/pngpaste)
+- [pomo](https://github.com/rwxrob/pomo)
 
 Extras:
 
@@ -23,20 +41,11 @@ Extras:
 
 ## Neovim
 
-### Requirements
+### Plugins - Neovim
 
-- Neovim (>=0.9.0)
-  - Since I switched from Vim to Neovim, I followed [this guide](https://neovim.io/doc/user/nvim.html#nvim-from-vim)
-- Package manager: [Packer](https://github.com/wbthomason/packer.nvim)
+- Package manager: [Lazy.nvim](https://github.com/folke/lazy.nvim)
 - Fuzzy finder: [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-  - It requires `fd` (install it with `sudo apt install fd-find` on Ubuntu/Debian)
 - Parser: [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- Ensure the Python virtual environment package is installed (example for Ubuntu/Debian and python 3.10):
-
-```bash
-sudo apt install python3.10-venv
-```
-
 - Debugger: [nvim-dap](https://github.com/mfussenegger/nvim-dap)
   - It requires to create a virtual environment where to place the [debugging engine](https://github.com/microsoft/debugpy):
 
@@ -47,43 +56,52 @@ python -m venv debugpy
 debugpy/bin/python -m pip install debugpy
 ```
 
-- `wl-clipboard`, install via package manager (`sudo apt install wl-clipboard`), needed by the clipboard-image plugin (paste images in markdown)
+- [clipboard-image.nvim](https://github.com/dfendr/clipboard-image.nvim) - paste images from the clipboard to the current file (as snippet); used for Markdown
+  - Using fork since original repo has a bug for Apple Silicon Macs.
+- _And many more!_...
 
-For a complete list of plugins, refer to the [Packer config](./nvim/lua/dmacario/packer.lua).
+For a complete list of plugins, refer to the [plugins folder](./nvim/lua/dmacario/lazy).
 
 ### Key bindings
 
+Here are my custom keybindings!
+
 **Leader key**: `<space>`
 
+- `,`: fold code
 - Split view:
-  - `,`: fold code
+  - `<leader>v`: split vertically
+  - `<leader>s`: split horizontally
   - `<leader>h`: focus left split
   - `<leader>l`: focus right split
   - `<leader>j`: focus bottom split
   - `<leader>k`: focus top split
-  - `<leader>v`: split vertically
-  - `<leader>s`: split horizontally
 - Tabs:
-  - `H`: move to left tab
-  - `L`: move to right tab
+  - `H`: move to "left" tab
+  - `L`: move to "right" tab
+    - _Note_: left/right depends on the order according to which the tabs were opened (it takes some getting used to...)
 - Move selected lines (**visual mode**):
   - `J`: move selected lines down
   - `K`: move selected lines up
 - Misc:
   - `<leader>p`: paste without losing yanked text
 - LSP:
-  - `gd`: go to definition (Use `Ctrl O` - note maiusc - to get back)
+  - `gd`: go to definition (Use `Ctrl o` to get back)
   - `K`: hover (show function definition)
-  - Press `enter` to autocomplete with selection (move through selections with arrows, for now)
-  - `Ctrl <space>`: toggle completion menu
+  - Use `tab` and `shift tab` to cycle through suggestion
+  - Press `enter` to autocomplete with selection
+  - `Ctrl <space>`: toggle completion menu (on & off)
 - Fugitive (git utility):
-  - `<leader>gst`: show git status (exit with :q)
-- Nerdtree (show file tree):
+  - `<leader>gs`: show git status (exit with :q)
+  - `<leader>gps`: git pull
+  - `<leader>gpu`: git push
+- Nvim-tree (file tree):
   - `<leader>o`: toggle (on/off) tree
 - Telescope (fuzzy finder):
-  - `<leader>ff` for find files
-  - `<leader>fg` for find git files
-  - `<leader>fs` for find strings (file contents - Grep)
+  - `<leader>ff`: find files
+  - `<leader>fg`: find git files
+  - `<leader>fs`: find strings (file content - Live Grep)
+  - `<leader>fb`: finding in the currently open buffers
 - Harpoon:
   - `<leader>a`: add file to Harpoon
   - `Ctrl e`: toggle quick menu
@@ -95,8 +113,33 @@ For a complete list of plugins, refer to the [Packer config](./nvim/lua/dmacario
   - `<leader>u`: toggle undotree (on/off)
 - Dap (debugger):
   - `<leader>dt`: toggle UI
+  - `<leader>dB`: set breakpoint
   - `<leader>db`: toggle breakpoint
   - `<leader>dc`: continue (go to next breakpoint) or **start debugging**
+  - `<leader>di`: step into
+  - `<leader>dj`: down
+  - `<leader>dk`: up
+  - `<leader>dl`: run last
+  - `<leader>do`: step out
+  - `<leader>dO`: step over
+  - `<leader>dp`: pause
+  - `<leader>dT`: terminate
   - `<leader>dr`: reset UI
 - Markdown Preview:
   - `<leader>mp`: toggle MarkdownPreview window
+- Clipboard Image (paste images in editor - _Markdown_):
+  - `<leader>ip`: paste image from clipboard (it will prompt to insert the image name in the folder `./img/`)
+- LaTeX (VimTeX):
+  - Local Leader: `"\"`
+  - `\ll`: start compilation process
+  - `\lk`: stop compilation
+  - `\lc`: clear auxiliary files
+  - `\lt`: show table of contents
+  - `\lv`: open pdf (without compiling) - won't work if no pdf was generated
+  - `\le`: toggle the log window (with compiler errors/warnings)
+- Trouble (diagnostics):
+  - `<leader>xx`: toggle trouble window
+  - `<leader>xw`: toggle trouble window for current workspace
+  - `<leader>xd`: toggle trouble window for current document
+  - `<leader>xq`: toggle trouble quick fix
+  - `<leader>xl`: toggle trouble for items in the location list
