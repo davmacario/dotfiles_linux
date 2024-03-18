@@ -57,7 +57,7 @@ return{
           },
         },
         lualine_c = {
-          'filename',
+          {'filename', path=1},
           'searchcount'},
         lualine_x = {'encoding', { "fileformat", symbols = { unix = os_icon } }},
         lualine_y = {'filetype', 'progress'},
@@ -66,7 +66,7 @@ return{
       inactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = {'filename'},
+        lualine_c = {{'filename', path=2}},
         lualine_x = {'location'},
         lualine_y = {},
         lualine_z = {},
